@@ -1,0 +1,37 @@
+server:
+  port: 8080
+  tomcat:
+    threads:
+      max: 400
+stub:
+  delay:
+    delete: 1
+logging:
+  file:
+    name: Z:\\logs\\stub.log
+    max-size: 50MB
+  pattern:
+    console: "%d{HH:mm:ss.SSS} %msg%n"
+    file: "%d %-5level [%thread] %logger : %msg%n"
+authorName: "AuthorProd"
+management:
+  server:
+  endpoints:
+    web:
+      base-path: /actuator
+      exposure:
+        include: "*"
+spring:
+  profiles:
+    active: prod
+  datasource:
+    url: jdbc:h2:file:./data/myDB
+    username: sa
+    password: pass
+    driver-class-name: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+  h2:
+    console:
+      enabled: true
+

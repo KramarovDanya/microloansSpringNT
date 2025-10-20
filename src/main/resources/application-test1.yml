@@ -1,0 +1,16 @@
+server:
+  port: 7770
+  tomcat:
+    threads:
+      max: 400
+stub:
+  delay:
+    delete: 2
+logging:
+  file:
+    name: Z:\\logs\\stub.log
+    max-size: 50MB
+  pattern:
+    console: "%d{HH:mm:ss.SSS} %msg%n"
+    file: "%d %-5level [%thread] %logger : %msg%n"
+authorName: "AuthorTest1"
